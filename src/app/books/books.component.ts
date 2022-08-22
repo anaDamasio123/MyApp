@@ -26,7 +26,4 @@ export class BooksComponent implements OnInit {
   }
 
   myName: string = '';
-  handleInput(event: any) {
-    this.myName = event.target.value;
-  }
 }
