@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Book {
-  name:string
-  author:string
-  image:string,
-  amount:number
-}
+import { Book } from '../types/Book';
 
 @Component({
   selector: 'app-books',
@@ -38,13 +32,22 @@ export class BooksComponent implements OnInit {
       image: 'https://mit-press-us.imgix.net/covers/9780262046305.jpg?auto=format&w=260&dpr=1&q=20',
       amount: 850
     }
-  ]
+  ];
+
+  card: Book[] = [];
   
   isShowing: boolean = true;
 
 
-  constructor() { }
+  constructor() {
+    console.log({ constructor: 'constrcutor' });
+   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log({ onInit: "omInit" });
+  }
 
+  addToCard(book: Book) {
+    console.log(book);
+  }
 }
