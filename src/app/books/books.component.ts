@@ -39,13 +39,9 @@ export class BooksComponent implements OnInit {
   isShowing: boolean = true;
 
 
-  constructor() {
-    console.log({ constructor: 'constrcutor' });
-   }
+  constructor() {}
 
-  ngOnInit(): void {
-    console.log({ onInit: "omInit" });
-  }
+  ngOnInit(): void {}
 
   addToCard(book: Book) {
     console.log(book);

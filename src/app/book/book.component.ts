@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../types/Book';
 
 @Component({
@@ -6,21 +6,13 @@ import { Book } from '../types/Book';
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css']
 })
-export class BookComponent implements OnInit, OnDestroy {
+export class BookComponent implements OnInit {
   @Input() book: Book = {} as Book;
   @Output() bookEmitter = new EventEmitter<Book>();
 
   constructor() { }
 
-  ngOnInit(): void {
-    setInterval(() => {
-      console.log('hello');
-    }, 1000)
-  }
-
-  ngOnDestroy(): void {
-    console.log({ ngOnDestroy: 'onDestroy' });
-  }
+  ngOnInit(): void {}
 
   addToCard() {
     this.bookEmitter.emit(this.book);
