@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BooksService {
-  constructor() { }
+  constructor(name: Name) { }
 
   getBooks() {
 
@@ -35,4 +35,8 @@ export class BooksService {
       }
     ];
   }
+}
+
+class Name {
+  constructor(name: string) {}
 }

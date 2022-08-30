@@ -10,13 +10,15 @@ import { BooksService } from './books.service';
 export class BooksComponent implements OnInit {
   books: Book[] = [];
 
-  constructor(private booksService: BooksService) {
+  private booksService: BooksService;
+
+  constructor() {
+    this.booksService = new BooksService('Sarthak');
   }
 
   card: Book[] = [];
   
   isShowing: boolean = true;
-
 
 
   ngOnInit(): void {
